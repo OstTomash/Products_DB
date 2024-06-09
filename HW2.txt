@@ -1,0 +1,28 @@
+1. INSERT INTO products(name, price) VALUES
+('Product 12', 510.00),
+('Product 13', 520.00),
+('Product 14', 490.00),
+('Product 15', 610.00),
+('Product 16', 352.00);
+
+2. INSERT INTO orders(customer_id, product_id, order_date, quantity) VALUES
+(2, 4, '2024-02-01'),
+(3, 5, '2024-03-01'),
+(4, 6, '2024-01-02'),
+(5, 7, '2024-02-02'),
+(6, 5, '2024-02-24'),
+(7, 4, '2024-01-19');
+
+3. INSERT INTO suppliers(name, contact_name) VALUES
+('Supplier D', 'Vlad Ushakov'),
+('Supplier E', 'Vlad Ushkov'),
+('Supplier F', 'Vlad Tomash'),
+('Supplier G', 'Andriy Ushakov');
+
+5. SELECT * FROM products WHERE price > 500;
+
+6. SELECT * FROM orders WHERE order_date > '2024-01-01';
+
+7. SELECT * FROM orders WHERE quantity > 1;
+
+8. SELECT * FROM suppliers WHERE contact_name = 'Vlad Ushakov';

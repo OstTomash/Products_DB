@@ -1,0 +1,8 @@
+1. SELECT * FROM products WHERE price = (SELECT MAX(price) FROM products);
+
+2. SELECT AVG(price) FROM products;
+
+3.
+SELECT SUM(orders.quantity * products.price) FROM orders
+JOIN products ON orders.product_id = products.product_id
+WHERE customer_id = 1;

@@ -1,0 +1,45 @@
+SELECT user_name, checkout_date FROM checkouts
+INNER JOIN users ON checkouts.user_id = users.id;
+
+
+SELECT user_name, COUNT(*) books_borrowed FROM checkouts
+INNER JOIN users ON checkouts.user_id = users.id
+GROUP BY user_name
+ORDER BY books_borrowed;
+
+
+SELECT user_name, COUNT(*) books_borrowed FROM checkouts
+INNER JOIN users ON checkouts.user_id = users.id
+GROUP BY user_name
+ORDER BY books_borrowed DESC
+LIMIT 10;
+
+
+SELECT user_name, book_title, checkout_date FROM users
+LEFT JOIN checkouts ON  users.id = checkouts.user_id
+LEFT JOIN books ON  checkouts.book_isbn = books.isbn
+ORDER BY user_name;
+
+
+SELECT user_name, book_title, checkout_date FROM users
+LEFT JOIN checkouts ON  users.id = checkouts.user_id
+LEFT JOIN books ON  checkouts.book_isbn = books.isbn
+WHERE book_title IS NOT NULL
+ORDER BY user_name, checkout_date;
+
+
+SELECT user_name, COUNT(book_title) FROM users
+LEFT JOIN checkouts ON users.id = checkouts.user_id
+LEFT JOIN books ON checkouts.book_isbn = books.isbn
+WHERE book_title IS NOT NULL
+GROUP BY user_name;
+
+
+SELECT librarian_name, branch_name FROM librarians
+FULL JOIN library_branches ON librarians.branch_id = library_branches.id;
+
+
+SELECT librarian_name, user_name, users.country FROM librarians
+FULL JOIN library_branches ON librarians.branch_id = library_branches.id
+FULL JOIN users ON librarians.country = users.country
+WHERE librarians.country = 'USA' AND users.country = 'USA';

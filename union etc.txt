@@ -1,0 +1,23 @@
+1. SELECT user_name FROM users
+   UNION
+   SELECT librarian_name FROM librarians;
+
+2. SELECT country FROM users
+   UNION
+   SELECT country FROM librarians;
+
+3. SELECT user_name FROM users
+   INTERSECT
+   SELECT librarian_name FROM librarians;
+
+4. SELECT country FROM users
+   INTERSECT
+   SELECT country FROM librarians;
+
+5. SELECT user_name FROM users
+   EXCEPT
+   SELECT librarian_name FROM librarians;
+
+6. SELECT country FROM users
+   EXCEPT
+   SELECT country FROM librarians;

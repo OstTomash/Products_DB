@@ -1,0 +1,18 @@
+1. SELECT user_name, COUNT(*)
+   FROM checkouts
+   JOIN users ON checkouts.user_id = users.id
+   GROUP BY user_name
+   HAVING COUNT(*) > 5
+   ORDER BY COUNT(*) DESC;
+
+2. SELECT genre, COUNT(*)
+   FROM books
+   GROUP BY genre
+   HAVING COUNT(*) > 10
+   ORDER BY COUNT(*) DESC;
+
+3. SELECT lib_branch, COUNT(*)
+   FROM librarians
+   GROUP BY lib_branch
+   HAVING COUNT(*) > 5
+   ORDER BY COUNT(*) DESC;
